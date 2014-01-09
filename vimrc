@@ -90,7 +90,7 @@ set numberwidth=5
 set colorcolumn=80
 set cursorline
 set list
-set listchars=tab:▸\ \,trail:·
+set listchars="tab:▸\ \,trail:·"
 set relativenumber
 set ruler
 set showmatch
