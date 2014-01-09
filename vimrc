@@ -99,6 +99,8 @@ set showmatch
 
 " Key mappings
 " ------------
+inoremap jk <esc>
+
 " Plugin triggers
 map  <leader>c :CoffeeCompile<CR>
 map  <leader>g :call EditIncludeOnLine()<CR>
