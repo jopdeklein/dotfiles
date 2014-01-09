@@ -65,7 +65,7 @@ set showcmd
 set spell
 
 " Autocomplete
-set wildignore+=*.o,*.obj,.git,.svn,*.pyc
+set wildignore+=*.o,*.obj,.git,.svn,*.pyc,*/node_modules/*,*/bower_components/*
 set wildmode=list:longest,list:full
 
 " Folding
@@ -153,10 +153,10 @@ let g:ctrlp_lazy_update = 150
 let g:ctrlp_use_caching = 1
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
-let g:ctrlp_regexp = 1
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --exclude-standard', 'find %s -type f']
+"let g:ctrlp_regexp = 1
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --exclude-standard', 'find %s -type f']
 let g:fugitive_summary_format = '%h - %d %s (%cr by %an)'
-:let g:session_autosave = 'no'
+let g:session_autosave = 'no'
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:syntastic_auto_loc_list=1
 let g:syntastic_enable_signs=1
