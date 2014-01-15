@@ -94,8 +94,6 @@ set list
 set list listchars="tab:\»\ ,trail:·"
 set relativenumber
 set ruler
-set showmatch
-
 
 
 " Key mappings
@@ -194,7 +192,6 @@ if has('gui_macvim')
   " Theme overrides (@TODO: fork theme)
   " set guifont=Monaco:h12
   set guifont=Monaco\ for\ Powerline:h12
-  highlight Cursor guibg=#ffffff guifg=#000000
   highlight Cursor guifg=#FFFFFF guibg=#FFFFFF
   highlight ColorColumn guibg=#111111
   highlight MatchParen guibg=NONE guifg=#E32669 gui=bold
