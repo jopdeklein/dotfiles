@@ -58,7 +58,6 @@ filetype plugin indent on
 " -------
 
 " Global
-let mapleader=","
 set nobackup
 set noswapfile
 set showcmd
@@ -84,13 +83,15 @@ set softtabstop=2
 set incsearch
 set hlsearch
 set ignorecase
+set smartcase
 set numberwidth=5
 
 " Visual Aids
+set guicursor=n-v-c:hor5-Cursor
 set colorcolumn=80
 set cursorline
 set list
-set listchars="tab:▸\ \,trail:·"
+set list listchars="tab:\»\ ,trail:·"
 set relativenumber
 set ruler
 set showmatch
@@ -110,6 +111,7 @@ nmap <leader>b :CtrlPBuffer<cr>
 nmap <leader>t :CtrlPTag<cr>
 vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
 
+
 " Convert newlines and retab
 nmap <Leader>r :%s/\r/\r/g<cr>gg<cr>:retab<cr>
 
@@ -121,6 +123,14 @@ nmap <silent><leader>z :set foldexpr=getline(v:lnum)!~@/ foldlevel=0 foldcolumn=
 
 " Stop highlighting
 nnoremap <leader><space> :noh<cr>
+
+" Stop Spellcheck
+nnoremap <leader>s <ESC>:set nospell<CR>
+
+" Ack: Search for pattern recursively
+map <leader>a :LAck
+" Ack: Search for word under cursor recursively
+map <leader>A :LAck <cword><cr>
 
 " Filetype settings
 " -----------------
@@ -139,15 +149,18 @@ let NERDTreeBookmarksFile = $HOME . '/.vim_nerdtree_bookmarks'
 let NERDTreeIgnore=['\.pyc$', '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeWinSize=50
-let coffee_make_options = '-o /tmp/'
+"let coffee_make_options = '-o /tmp/'
 " let g:airline_theme='spacedust'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:airline_powerline_fonts = 1
+
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+
 let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ctrlp_cmd = 'CtrlP .'
 let g:ctrlp_extensions = ['tag']
@@ -160,6 +173,7 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
 let g:fugitive_summary_format = '%h - %d %s (%cr by %an)'
 let g:session_autosave = 'no'
 let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:syntastic_check_on_open=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_enable_signs=1
 let g:syntastic_javascript_checkers=['jshint']
@@ -170,15 +184,23 @@ let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
 " Setup UI
 " --------
-if has('gui_running')
+if has('gui_macvim')
   set vb " no bells; as macvim does not support visual bell
-  set guioptions=aAc "add 'e' for native tabs
+  set guioptions=aAce "add 'e' for native tabs
   set background=dark
 
   colorscheme jellybeans
 
   " Theme overrides (@TODO: fork theme)
   " set guifont=Monaco:h12
-  highlight ColorColumn guibg=#222222
+  set guifont=Monaco\ for\ Powerline:h12
   highlight Cursor guibg=#ffffff guifg=#000000
+  highlight Cursor guifg=#FFFFFF guibg=#FFFFFF
+  highlight ColorColumn guibg=#111111
+  highlight MatchParen guibg=NONE guifg=#E32669 gui=bold
+  highlight SignColumn guibg=#151515
+  highlight SpellBad gui=underline guisp=#9a2121
+  highlight SpellCap gui=underline
+  highlight Error guibg=#151515 guifg=#9a2121
+  highlight SpecialKey guibg=#151515 guifg=#333333
 end
