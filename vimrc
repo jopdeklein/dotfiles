@@ -138,6 +138,7 @@ nnoremap <NL> i<CR><ESC>
 " Filetype settings
 " -----------------
 autocmd BufNewFile,BufRead,BufWritePost *.md set filetype=markdown
+autocmd BufNewFile,BufRead,BufWritePost *.swig set filetype=django
 autocmd FileType coffee set commentstring=#%s
 
 set omnifunc=syntaxcomplete#Complete
