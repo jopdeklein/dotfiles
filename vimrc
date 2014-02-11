@@ -23,7 +23,7 @@ Bundle 'scrooloose/syntastic'
 
 " Text editing tools
 " ------------------
-Bundle 'tpope/vim-commentary'
+Bundle 'jopdeklein/vim-commentary'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
@@ -134,6 +134,7 @@ map <leader>A :LAck <cword><cr>
 " Filetype settings
 " -----------------
 autocmd BufNewFile,BufRead,BufWritePost *.md set filetype=markdown
+autocmd FileType coffee set commentstring=#%s
 
 set omnifunc=syntaxcomplete#Complete
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
