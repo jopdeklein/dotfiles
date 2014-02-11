@@ -65,7 +65,7 @@ set showcmd
 set spell
 
 " Autocomplete
-set wildignore+=*.o,*.obj,.git,.svn,*.pyc,*/node_modules/*,*/bower_components/*
+set wildignore+=*.o,*.obj,.git,.svn,*.pyc,*/node_modules/*,*/bower_components/*,*/dist/*,*/.tmp/*
 set wildmode=list:longest,list:full
 
 " Folding
