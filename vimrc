@@ -110,6 +110,8 @@ nmap <leader>b :CtrlPBuffer<cr>
 nmap <leader>t :CtrlPTag<cr>
 vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
 
+" Command-Shift-F for Ack
+map <D-F> :Ack<space>
 
 " Convert newlines and retab
 nmap <Leader>r :%s/\r/\r/g<cr>gg<cr>:retab<cr>
@@ -130,6 +132,8 @@ nnoremap <leader>s <ESC>:set nospell<CR>
 map <leader>a :LAck
 " Ack: Search for word under cursor recursively
 map <leader>A :LAck <cword><cr>
+
+nnoremap <NL> i<CR><ESC>
 
 " Filetype settings
 " -----------------
