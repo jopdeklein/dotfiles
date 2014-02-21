@@ -49,6 +49,7 @@ Bundle 'mattboehm/vim-accordion'
 " Session Management
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
+Bundle 'embear/vim-localvimrc'
 
 " Misc
 " ----
