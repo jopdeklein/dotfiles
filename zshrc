@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="dorm"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -45,25 +45,10 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(bower, brew, git, npm)
 
-source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh  
 
 # User configuration
-
-export PATH="/Users/jopdeklein/.rvm/gems/ruby-1.9.3-p484/bin:/Users/jopdeklein/.rvm/gems/ruby-1.9.3-p484@global/bin:/Users/jopdeklein/.rvm/rubies/ruby-1.9.3-p484/bin:/Users/jopdeklein/nvm/v0.10.25/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/sbin:/Users/jopdeklein/.rvm/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
+alias npm-exec='PATH=$(npm bin):$PATH'
+alias g='git'
