@@ -8,10 +8,14 @@
 	co = checkout
 	br = branch
 	cb = checkout -b
+	d = diff
+	dc = diff --cached
+	dt = difftool
+	dtc = difftool --cached
+	gl = log --all --graph --oneline --decorate
+	out = log origin.. --oneline --decorate
 	revert = checkout --
-	last = log -1 HEAD
 	unstage = reset HEAD --
-	d = difftool
 [push]
 	default = simple
 [diff]
