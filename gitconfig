@@ -1,0 +1,28 @@
+[include]
+	path = ~/.gitconfig.private
+[credential]
+	helper = osxkeychain
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	cb = checkout -b
+	d = diff
+	dc = diff --cached
+	dt = difftool
+	dtc = difftool --cached
+	gl = log --all --graph --oneline --decorate
+	out = log origin.. --oneline --decorate
+	revert = checkout --
+	unstage = reset HEAD --
+[push]
+	default = simple
+[diff]
+	tool = gvimdiff
+[difftool]
+	prompt = false
+[core]
+	editor = mvim -f -g
+[color]
+	ui = true

@@ -92,8 +92,8 @@ set numberwidth=5
 set guicursor=n-v-c:hor5-Cursor
 set colorcolumn=80
 set cursorline
+set listchars=tab:▸\ ,trail:¬
 set list
-set list listchars="tab:\»\ ,trail:·"
 set relativenumber
 set ruler
 
