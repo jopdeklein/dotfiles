@@ -1,6 +1,14 @@
 #!/bin/bash
 
-FILES=("ctags=.ctags" "gitconfig=.gitconfig" "gitignore_global=.gitignore_global" "vimrc=.vimrc" "gvimrc=.gvimrc" "zshrc=.zshrc")
+FILES=(
+  "ctags=.ctags"
+  "gitconfig=.gitconfig"
+  "gitignore_global=.gitignore_global"
+  "vimrc=.vimrc"
+  "gvimrc=.gvimrc"
+  "zshrc=.zshrc"
+  "ackrc=.ackrc"
+)
 
 # Get GO from user
 echo "This script will remove and link dotfiles in $HOME!"
