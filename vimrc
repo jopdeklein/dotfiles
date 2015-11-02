@@ -1,9 +1,7 @@
 set nocompatible
 filetype off
-
-runtime macros/matchit.vim
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/vundle
+call vundle#begin()
 
 Bundle 'gmarik/vundle'
 
@@ -16,6 +14,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'mtscout6/vim-cjsx'
 
 " General language tools
 " ----------------------
@@ -23,6 +22,7 @@ Bundle 'scrooloose/syntastic'
 
 " Text editing tools
 " ------------------
+Bundle 'vim-scripts/tlib'
 Bundle 'jopdeklein/vim-commentary'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-repeat'
@@ -30,6 +30,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'MarcWeber/ultisnips'
 Bundle 'honza/vim-snippets'
+Bundle 'ervandew/supertab'
+
 
 " Version control
 " ---------------
@@ -38,23 +40,29 @@ Bundle 'mhinz/vim-signify'
 
 " Navigation, search, GUI
 " -----------------------
-Bundle 'bling/vim-airline'
+"Bundle 'bling/vim-airline'
 Bundle 'ZoomWin'
 Bundle 'ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'sjl/gundo.vim'
 Bundle 'mattboehm/vim-accordion'
+Bundle 'majutsushi/tagbar'
 
 " Session Management
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 Bundle 'embear/vim-localvimrc'
+call vundle#end()            " required
+
+
+filetype plugin indent on
+let g:session_autoload = 'no'
+runtime macros/matchit.vim
 
 " Misc
 " ----
 syntax enable
-filetype plugin indent on
 
 " Options
 " -------
@@ -140,6 +148,7 @@ nnoremap <NL> i<CR><ESC>
 " -----------------
 autocmd BufNewFile,BufRead,BufWritePost *.md set filetype=markdown
 autocmd BufNewFile,BufRead,BufWritePost *.swig set filetype=django
+autocmd BufNewFile,BufRead,BufWritePost *.cjsx set filetype=coffee
 autocmd FileType coffee set commentstring=#%s
 
 set omnifunc=syntaxcomplete#Complete
@@ -155,8 +164,10 @@ let NERDTreeBookmarksFile = $HOME . '/.vim_nerdtree_bookmarks'
 let NERDTreeIgnore=['\.pyc$', '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeWinSize=50
+let g:NERDTreeDirArrows=0
+
 "let coffee_make_options = '-o /tmp/'
-" let g:airline_theme='spacedust'
+let g:airline_theme='spacedust'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#tabline#enabled = 1
