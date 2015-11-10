@@ -28,7 +28,8 @@ Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'MarcWeber/ultisnips'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
 
@@ -174,6 +175,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_powerline_fonts = 1
 
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
@@ -189,7 +194,6 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
 "let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --exclude-standard', 'find %s -type f']
 let g:fugitive_summary_format = '%h - %d %s (%cr by %an)'
 let g:session_autosave = 'yes'
-" let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:syntastic_check_on_open=1
 " let g:syntastic_auto_loc_list=1
 let g:syntastic_enable_signs=1
