@@ -32,6 +32,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
+Bundle 'vim-scripts/Greplace.vim'
 
 
 " Version control
@@ -203,3 +204,6 @@ let g:syntastic_html_checkers=[]
 let g:syntastic_php_checkers=['php']
 let g:syntastic_scss_checkers=[]
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_seed_identifiers_with_syntax = 1
